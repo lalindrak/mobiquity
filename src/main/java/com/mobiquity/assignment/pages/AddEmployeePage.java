@@ -5,6 +5,7 @@ import com.mobiquity.assignment.helper.LoggerUtil;
 import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.text.SimpleDateFormat;
@@ -23,6 +24,7 @@ public class AddEmployeePage extends BasePage {
     private static final String submitButton = "//button[text()='Add']";
     private static final String cancelButton = "//a[text()='Cancel']";
     private static final String inputFields = "//input";
+    private static final String updateButton = "//button[text()='Update']";
 
     public boolean verifyPageURL() {
         wait(2);
@@ -42,60 +44,20 @@ public class AddEmployeePage extends BasePage {
             for (WebElement result : fieldValues) {
                 if (result.getAttribute("type").equals("email")) {
                     email = dataEmployee.get(i).get(1).replaceAll("@", addRandomStringToEmail());
+                    result.clear();
                     result.sendKeys(email);
                 } else if (result.getAttribute("ng-model").equals("selectedEmployee.startDate")) {
                     currentDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+                    result.clear();
                     result.sendKeys(currentDate);
                 } else if (result.getAttribute("type").equals("text")) {
+                    result.clear();
                     result.sendKeys(dataEmployee.get(i).get(1).concat("" + System.currentTimeMillis()));
                 }
                 i++;
             }
         }
     }
-//    public boolean assertUserInputs(DataTable employee){
-//        String email;
-//        String currentDate;
-//        List<List<String>> dataEmployee = employee.raw();
-//        for (int i = 1; i < dataEmployee.size(); i++) {
-//
-//            List<WebElement> fieldValues = driver.findElements(By.xpath(inputFields));
-//            for (WebElement result : fieldValues) {
-//                if (result.getAttribute("type").equals("email")) {
-//                    if(!dataEmployee.get(i).get(1).contains("@")){
-//                        return false;
-//                    }
-//                    else
-//                        email = dataEmployee.get(i).get(1).replaceAll("@", addRandomStringToEmail());
-//                        result.sendKeys(email);
-//
-//                } else if (result.getAttribute("ng-model").equals("selectedEmployee.startDate")) {
-//
-//                    SimpleDateFormat correctDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//                    if(!dataEmployee.get(i).get(1).matches("^\\d{4}-\\d{2}-\\d{2}$")){
-//                        return false;
-//                    }
-//                    else
-//                        currentDate = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-//                        result.sendKeys(currentDate);
-//
-//                } else if (result.getAttribute("type").equals("text")) {
-//
-//                    Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
-//                    Matcher m = p.matcher(dataEmployee.get(i).get(1));
-//                    boolean b = m.find();
-//                    if(dataEmployee.get(i).get(1).isEmpty() || dataEmployee.get(i).get(1).contains(m.toString())){
-//                        return false;
-//                    }
-//                    else
-//                        result.sendKeys(dataEmployee.get(i).get(1).concat("_" + System.currentTimeMillis()));
-//                }
-//                i++;
-//            }
-//        }
-//        return false;
-//
-//    }
 
     public boolean assertFirstName() {
         Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
@@ -157,11 +119,15 @@ public class AddEmployeePage extends BasePage {
 
     public void clickSubmit() {
         driver.findElement(By.xpath(submitButton)).click();
-        wait(1);
+        wait(2);
     }
 
     public void clickCancel() {
         driver.findElement(By.xpath(cancelButton)).click();
         wait(1);
+    }
+    public void clickUpdate(){
+        driver.findElement(By.xpath(updateButton)).click();
+        wait(2);
     }
 }

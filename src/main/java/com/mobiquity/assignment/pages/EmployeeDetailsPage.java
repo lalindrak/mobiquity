@@ -4,7 +4,9 @@ import com.mobiquity.assignment.base.BasePage;
 import com.mobiquity.assignment.helper.LoggerUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class EmployeeDetailsPage extends BasePage {
     private static final String greetingsUser = "//p[@id='greetings']";
     private static final String createButton = "//a[text()='Create']";
     private static final String employeeList = "//ul[@id='employee-list']/li";
+    private static final String editButton = "//a[text()='Edit']";
 
     public boolean verifyPageURL() {
         wait(2);
@@ -39,7 +42,7 @@ public class EmployeeDetailsPage extends BasePage {
 
     public void clickCreateButton() {
         driver.findElement(By.xpath(createButton)).click();
-        wait(1);
+        wait(2);
 
     }
 
@@ -52,5 +55,28 @@ public class EmployeeDetailsPage extends BasePage {
         }
         log.error("Added employee is not found in the employee list");
         return false;
+    }
+
+    public void clickOnEmployeeRecord(String employeeName){
+        List<WebElement> listEmployee = driver.findElements(By.xpath(employeeList));
+        for (WebElement employee : listEmployee) {
+            if (employee.getText().trim().equals(employeeName)) {
+                employee.click();
+            }
+        }
+    }
+    public void clickOnEditButton(){
+        driver.findElement(By.xpath(editButton)).click();
+        wait(2);
+    }
+    public void doubleClickOnEmployeeRecord(String employeeName){
+        List<WebElement> listEmployee = driver.findElements(By.xpath(employeeList));
+        for (WebElement employee : listEmployee) {
+            if (employee.getText().trim().equals(employeeName)) {
+                wait(1);
+                doubleClick(employee);
+                wait(1);
+            }
+        }
     }
 }

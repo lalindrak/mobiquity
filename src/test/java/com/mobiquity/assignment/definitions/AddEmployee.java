@@ -46,4 +46,18 @@ public class AddEmployee {
     public void userClickOnCancelButton() {
         addEmployeePage.clickCancel();
     }
+
+    @When("^User edits the employee information as below$")
+    public void userEditsTheEmployeeInformationAsBelow(DataTable employee) {
+        addEmployeePage.fillEmployeeInformation(employee);
+        data.setFirstName(addEmployeePage.getFirstName());
+        data.setLastName(addEmployeePage.getLastName());
+        data.setStartDate(addEmployeePage.getStartDate());
+        data.setEmail(addEmployeePage.getEmail());
+    }
+
+    @And("^User clicks on Update button$")
+    public void userClicksOnUpdateButton() {
+        addEmployeePage.clickUpdate();
+    }
 }

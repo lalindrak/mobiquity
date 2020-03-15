@@ -42,4 +42,20 @@ public class EmployeeDetails {
     public void newEmployeeRecordShouldShouldNotBeAddedTheSystem() {
         Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), false);
     }
+
+    @Given("^User click on the employee name from the employee list$")
+    public void userClickOnTheEmployeeNameFromTheEmployeeList() {
+        employeeDetailsPage.clickOnEmployeeRecord(data.getFirstName()+ " " + data.getLastName());
+        employeeDetailsPage.clickOnEditButton();
+    }
+
+    @Then("^Updated information should be displayed in the system$")
+    public void updatedInformationShouldBeDisplayedInTheSystem() {
+        Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), true);
+    }
+
+    @Given("^User double click on the employee name from the employee list$")
+    public void userDoubleClickOnTheEmployeeNameFromTheEmployeeList() {
+        employeeDetailsPage.doubleClickOnEmployeeRecord(data.getFirstName()+ " " + data.getLastName());
+    }
 }
