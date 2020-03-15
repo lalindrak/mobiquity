@@ -1,8 +1,8 @@
 # new feature
 # Tags: optional
-
 Feature: Login and Logout functionality of the system
 
+  @testing
   Scenario Outline: Verify the user is successfully logged into the system on Login button click
     Given User logs into the system with "<username>" and "<password>"
     When User clicks on "Submit" to login to the system

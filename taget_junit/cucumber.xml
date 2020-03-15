@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="0.510052">
+    <testcase classname="Login and Logout functionality of the system" name="Verify the user is successfully logged into the system on Login button click" time="0.510052">
+        <failure message="java.lang.NullPointerException&#10;&#9;at com.mobiquity.assignment.pages.LoginPage.enterUsername(LoginPage.java:19)&#10;&#9;at com.mobiquity.assignment.definitions.Login.user_logs_into_the_system_with_and(Login.java:20)&#10;&#9;at ✽.Given User logs into the system with &quot;Luke&quot; and &quot;Skywalker&quot;(src/test/java/com/mobiquity/assignment/features/login-logout.feature:7)&#10;">
+            <![CDATA[Given User logs into the system with "Luke" and "Skywalker".................failed
+When User clicks on "Submit" to login to the system.........................skipped
+Then User is successfully logged into the system............................skipped
+
+StackTrace:
+java.lang.NullPointerException
+	at com.mobiquity.assignment.pages.LoginPage.enterUsername(LoginPage.java:19)
+	at com.mobiquity.assignment.definitions.Login.user_logs_into_the_system_with_and(Login.java:20)
+	at ✽.Given User logs into the system with "Luke" and "Skywalker"(src/test/java/com/mobiquity/assignment/features/login-logout.feature:7)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
