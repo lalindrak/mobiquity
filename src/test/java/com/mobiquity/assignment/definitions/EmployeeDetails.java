@@ -2,9 +2,11 @@ package com.mobiquity.assignment.definitions;
 
 import com.mobiquity.assignment.data.Data;
 import com.mobiquity.assignment.pages.EmployeeDetailsPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.testng.Assert;
 
 public class EmployeeDetails {
@@ -43,10 +45,9 @@ public class EmployeeDetails {
         Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), false);
     }
 
-    @Given("^User click on the employee name from the employee list$")
+    @Given("^User clicks on the employee name from the employee list$")
     public void userClickOnTheEmployeeNameFromTheEmployeeList() {
         employeeDetailsPage.clickOnEmployeeRecord(data.getFirstName()+ " " + data.getLastName());
-        employeeDetailsPage.clickOnEditButton();
     }
 
     @Then("^Updated information should be displayed in the system$")
@@ -57,5 +58,30 @@ public class EmployeeDetails {
     @Given("^User double click on the employee name from the employee list$")
     public void userDoubleClickOnTheEmployeeNameFromTheEmployeeList() {
         employeeDetailsPage.doubleClickOnEmployeeRecord(data.getFirstName()+ " " + data.getLastName());
+    }
+
+    @When("^User clicks on Delete button$")
+    public void userClicksOnDeleteButton() {
+        employeeDetailsPage.clickDeleteButton();
+    }
+
+    @And("^User clicks \"([^\"]*)\" from the alert pop up$")
+    public void userClicksFromTheAlertPopUp(String userInput) throws Throwable {
+        employeeDetailsPage.clickOnAlertPopUp(userInput);
+    }
+
+    @Then("^Employee should be deleted from the employee list$")
+    public void employeeShouldBeDeletedFromTheEmployeeList() {
+        Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), false);
+    }
+
+    @And("^User clicks on Edit button$")
+    public void userClicksOnEditButton() {
+        employeeDetailsPage.clickOnEditButton();
+    }
+
+    @Then("^Employe should not be deleted from the system$")
+    public void employeShouldNotBeDeletedFromTheSystem() {
+        Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), true);
     }
 }

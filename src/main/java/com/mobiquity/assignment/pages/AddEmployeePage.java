@@ -25,7 +25,7 @@ public class AddEmployeePage extends BasePage {
     private static final String cancelButton = "//a[text()='Cancel']";
     private static final String inputFields = "//input";
     private static final String updateButton = "//button[text()='Update']";
-
+    private static final String backButton = "//a[text()='Back']";
     public boolean verifyPageURL() {
         wait(2);
         String employeePageURL = getPageURL();
@@ -128,6 +128,10 @@ public class AddEmployeePage extends BasePage {
     }
     public void clickUpdate(){
         driver.findElement(By.xpath(updateButton)).click();
+        wait(2);
+    }
+    public void clickBackButton(){
+        driver.findElement(By.xpath(backButton)).click();
         wait(2);
     }
 }

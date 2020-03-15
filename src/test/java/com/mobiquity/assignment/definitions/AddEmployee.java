@@ -60,4 +60,9 @@ public class AddEmployee {
     public void userClicksOnUpdateButton() {
         addEmployeePage.clickUpdate();
     }
+
+    @And("^User clicks on the back button$")
+    public void userClicksOnTheBackButton() {
+        addEmployeePage.clickBackButton();
+    }
 }

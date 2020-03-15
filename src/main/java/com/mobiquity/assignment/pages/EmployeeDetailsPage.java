@@ -3,6 +3,7 @@ package com.mobiquity.assignment.pages;
 import com.mobiquity.assignment.base.BasePage;
 import com.mobiquity.assignment.helper.LoggerUtil;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +20,7 @@ public class EmployeeDetailsPage extends BasePage {
     private static final String createButton = "//a[text()='Create']";
     private static final String employeeList = "//ul[@id='employee-list']/li";
     private static final String editButton = "//a[text()='Edit']";
+    private static final String deleteButton = "//a[text()='Delete']";
 
     public boolean verifyPageURL() {
         wait(2);
@@ -57,7 +59,7 @@ public class EmployeeDetailsPage extends BasePage {
         return false;
     }
 
-    public void clickOnEmployeeRecord(String employeeName){
+    public void clickOnEmployeeRecord(String employeeName) {
         List<WebElement> listEmployee = driver.findElements(By.xpath(employeeList));
         for (WebElement employee : listEmployee) {
             if (employee.getText().trim().equals(employeeName)) {
@@ -65,11 +67,13 @@ public class EmployeeDetailsPage extends BasePage {
             }
         }
     }
-    public void clickOnEditButton(){
+
+    public void clickOnEditButton() {
         driver.findElement(By.xpath(editButton)).click();
         wait(2);
     }
-    public void doubleClickOnEmployeeRecord(String employeeName){
+
+    public void doubleClickOnEmployeeRecord(String employeeName) {
         List<WebElement> listEmployee = driver.findElements(By.xpath(employeeList));
         for (WebElement employee : listEmployee) {
             if (employee.getText().trim().equals(employeeName)) {
@@ -79,4 +83,22 @@ public class EmployeeDetailsPage extends BasePage {
             }
         }
     }
+
+    public void clickDeleteButton() {
+        driver.findElement(By.xpath(deleteButton)).click();
+        wait(2);
+    }
+
+    public void clickOnAlertPopUp(String userInput) {
+        Alert alert = driver.switchTo().alert();
+        if (userInput.equals("Accept")) {
+            alert.accept();
+            wait(2);
+        }
+        else if(userInput.equals("Cancel")){
+            alert.dismiss();
+            wait(1);
+        }
+    }
+
 }

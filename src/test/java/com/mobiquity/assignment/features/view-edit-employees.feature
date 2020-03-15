@@ -18,8 +18,9 @@ Feature: Viewing and editing of the employee details in the system
     And User clicks on the Add button
     Then New employee record is added to the system
 
-  Scenario: User should be able to edit the employee by clicking on Edit button
-    Given User click on the employee name from the employee list
+  Scenario: Verify User should be able to edit the employee by clicking on Edit button
+    Given User clicks on the employee name from the employee list
+    And User clicks on Edit button
     When User edits the employee information as below
       | FieldName | FieldValue                  |
       | firstName | David                       |
@@ -30,7 +31,7 @@ Feature: Viewing and editing of the employee details in the system
     Then Updated information should be displayed in the system
 
 
-  Scenario: User should be able to edit the employee double clicking on Employee Name
+  Scenario: Verify User should be able to edit the employee double clicking on Employee Name
     Given User double click on the employee name from the employee list
     When User edits the employee information as below
       | FieldName | FieldValue                  |
