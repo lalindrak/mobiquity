@@ -1,4 +1,0 @@
-2020-03-15 21:03:486 INFO  ServiceHooks:37 - Verify the user can add employee to the system is passed
-2020-03-15 21:03:420 INFO  ServiceHooks:37 - Verify the text field validations for creating a new employee is passed
-2020-03-15 21:03:86 ERROR LoginPage:53 - Added employee is not found in the employee list
-2020-03-15 21:03:87 INFO  ServiceHooks:37 - User cancels the adding employee operation by clicking on cancel button is passed
