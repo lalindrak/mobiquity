@@ -1,0 +1,6 @@
+2020-03-16 12:03:235 INFO  ServiceHooks:37 - Verify the user is successfully logged into the system on Login button click is passed
+2020-03-16 12:03:668 INFO  ServiceHooks:37 - Verify the user is successfully logged into the system on Enter key press is passed
+2020-03-16 12:03:141 INFO  ServiceHooks:37 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
+2020-03-16 12:03:967 INFO  ServiceHooks:37 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
+2020-03-16 12:03:249 ERROR LoginPage:57 - Input fields are not empty after logging out from the system
+2020-03-16 12:03:253 ERROR ServiceHooks:26 - Verify the user is successfully logout from the system is failed
