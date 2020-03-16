@@ -18,5 +18,15 @@
  
 4. Run feature files
 	* Depending on the IDE you are using you may need to download relavant cucumber plugin to run the feature file
+	* Run in the command line
+	   * All tests
+	```
+	mvn test 
+	```
+	
+	  * To run specific tests
+	```
+	mvn test -Dcucumber.options="--tags @SmokeTest
+	```
   
 5. For other documentation please refer the main/resources folder
