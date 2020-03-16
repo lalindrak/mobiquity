@@ -3,7 +3,7 @@
 <suite name="BDD Test Suite">
     <test name="Regression Test" preserve-order="true">
         <classes>
-            <class name="com.mobiquity.assignment.features.login-logout"/>
+            <class name="com.mobiquity.assignment.testrunner.TestRunner"/>
         </classes>
     </test>
 </suite>

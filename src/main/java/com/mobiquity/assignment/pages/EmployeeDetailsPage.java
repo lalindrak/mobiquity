@@ -5,10 +5,7 @@ import com.mobiquity.assignment.helper.LoggerUtil;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -28,6 +25,7 @@ public class EmployeeDetailsPage extends BasePage {
         String employeePageURL = getPageURL();
         if (!employeePageURL.contains("/login")) {
             return true;
+
         } else
             return false;
     }
