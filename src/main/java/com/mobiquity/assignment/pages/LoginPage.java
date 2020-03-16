@@ -33,8 +33,7 @@ public class LoginPage extends BasePage {
     }
     public boolean verifyErrorMessage(String error){
         WebElement eleMessage = driver.findElement(By.xpath(errorMessage));
-        wait(2);
-
+        waitTillElementVisible(eleMessage,3);
         if(eleMessage.getText().trim().equals(error)){
             return true;
         }

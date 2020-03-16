@@ -28,4 +28,4 @@ Feature: Deleting an employee from the system
     Given User clicks on the employee name from the employee list
     When User clicks on Delete button
     And User clicks "Cancel" from the alert pop up
-    Then Employe should not be deleted from the system
+    Then Employee should not be deleted from the system

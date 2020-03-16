@@ -7,8 +7,13 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Calendar;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -26,6 +31,7 @@ public class AddEmployeePage extends BasePage {
     private static final String inputFields = "//input";
     private static final String updateButton = "//button[text()='Update']";
     private static final String backButton = "//a[text()='Back']";
+
     public boolean verifyPageURL() {
         wait(2);
         String employeePageURL = getPageURL();
@@ -34,7 +40,7 @@ public class AddEmployeePage extends BasePage {
         } else
             return false;
     }
-
+    //Adding employees to the system.
     public void fillEmployeeInformation(DataTable employee) {
         String email;
         String currentDate;
@@ -59,6 +65,7 @@ public class AddEmployeePage extends BasePage {
         }
     }
 
+    //Assert user inputs for special  characters except a-z and 0-9
     public boolean assertFirstName() {
         Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(getFirstName());
@@ -69,7 +76,7 @@ public class AddEmployeePage extends BasePage {
             return true;
 
     }
-
+    //Assert user inpits for special characters except a-z and 0-9
     public boolean assertLastName() {
         Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(getLastName());
@@ -80,22 +87,21 @@ public class AddEmployeePage extends BasePage {
         return
                 true;
     }
-
+    //Assert date text field for the correct format
     public boolean assertStartDate() {
         if (getStartDate().matches("^\\d{4}-\\d{2}-\\d{2}$")) {
             return true;
         } else
             return false;
     }
-
+    //Assert email for empty and invalid format without @
     public boolean assertEmail() {
         if (getEmail().contains("@") && !getEmail().equals("")) {
             return true;
         } else
             return false;
     }
-
-
+    //Method to add + sign with current date time to the email.
     public String addRandomStringToEmail() {
         String randomString = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         return "+" + randomString.concat("@");
@@ -119,19 +125,15 @@ public class AddEmployeePage extends BasePage {
 
     public void clickSubmit() {
         driver.findElement(By.xpath(submitButton)).click();
-        wait(2);
     }
 
     public void clickCancel() {
         driver.findElement(By.xpath(cancelButton)).click();
-        wait(1);
     }
     public void clickUpdate(){
         driver.findElement(By.xpath(updateButton)).click();
-        wait(2);
     }
     public void clickBackButton(){
         driver.findElement(By.xpath(backButton)).click();
-        wait(2);
     }
 }

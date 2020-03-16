@@ -7,6 +7,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
@@ -44,10 +45,9 @@ public class EmployeeDetailsPage extends BasePage {
 
     public void clickCreateButton() {
         driver.findElement(By.xpath(createButton)).click();
-        wait(2);
-
     }
 
+    //Verify the newly added employee is listed in the employee list
     public boolean isAddedEmployeeDisplayed(String employeeName) {
         List<WebElement> listEmployee = driver.findElements(By.xpath(employeeList));
         for (WebElement employee : listEmployee) {
@@ -64,40 +64,39 @@ public class EmployeeDetailsPage extends BasePage {
         for (WebElement employee : listEmployee) {
             if (employee.getText().trim().equals(employeeName)) {
                 employee.click();
+                break;
             }
         }
     }
 
     public void clickOnEditButton() {
         driver.findElement(By.xpath(editButton)).click();
-        wait(2);
     }
 
-    public void doubleClickOnEmployeeRecord(String employeeName) {
+    public void doubleClickOnEmployeeRecord(String employeeName){
         List<WebElement> listEmployee = driver.findElements(By.xpath(employeeList));
         for (WebElement employee : listEmployee) {
             if (employee.getText().trim().equals(employeeName)) {
-                wait(1);
                 doubleClick(employee);
-                wait(1);
+                break;
             }
+
         }
+
     }
 
     public void clickDeleteButton() {
         driver.findElement(By.xpath(deleteButton)).click();
-        wait(2);
     }
 
     public void clickOnAlertPopUp(String userInput) {
         Alert alert = driver.switchTo().alert();
         if (userInput.equals("Accept")) {
-            alert.accept();
             wait(2);
+            alert.accept();
         }
         else if(userInput.equals("Cancel")){
             alert.dismiss();
-            wait(1);
         }
     }
 

@@ -56,7 +56,7 @@ public class EmployeeDetails {
     }
 
     @Given("^User double click on the employee name from the employee list$")
-    public void userDoubleClickOnTheEmployeeNameFromTheEmployeeList() {
+    public void userDoubleClickOnTheEmployeeNameFromTheEmployeeList() throws InterruptedException {
         employeeDetailsPage.doubleClickOnEmployeeRecord(data.getFirstName()+ " " + data.getLastName());
     }
 
@@ -72,6 +72,7 @@ public class EmployeeDetails {
 
     @Then("^Employee should be deleted from the employee list$")
     public void employeeShouldBeDeletedFromTheEmployeeList() {
+
         Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), false);
     }
 
@@ -80,7 +81,7 @@ public class EmployeeDetails {
         employeeDetailsPage.clickOnEditButton();
     }
 
-    @Then("^Employe should not be deleted from the system$")
+    @Then("^Employee should not be deleted from the system$")
     public void employeShouldNotBeDeletedFromTheSystem() {
         Assert.assertEquals(employeeDetailsPage.isAddedEmployeeDisplayed(data.getFirstName() + " " + data.getLastName()), true);
     }

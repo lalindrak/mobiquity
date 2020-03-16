@@ -13,53 +13,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
-    <build>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration>
-                        <forkMode>once</forkMode>
-                        <testSourceDirectory>src/test/java</testSourceDirectory>
-                        <includes>
-                            <include>**/TestRunner.java</include>
-                        </includes>
-                        <systemPropertyVariables>
-                            <env>${env}</env>
-                            <cucumber.options>${tags}</cucumber.options>
-                        </systemPropertyVariables>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.5.1</version>
-                    <configuration>
-                        <encoding>UTF-8</encoding>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                    </configuration>
-                </plugin>
-
-
-            </plugins>
-        </pluginManagement>
-
-        <resources>
-            <resource>
-                <directory>src/test/resources/testdata</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
-
-    </build>
-
-
     <dependencies>
         <dependency>
             <groupId>info.cukes</groupId>

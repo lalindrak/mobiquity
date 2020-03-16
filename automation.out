@@ -1,1 +1,2 @@
-2020-03-16 02:03:142 ERROR ServiceHooks:26 - Verify User should be able to delete an employee by clicking on the Delete button is failed
+2020-03-16 11:03:967 ERROR ServiceHooks:26 - Verify User should be able to delete an employee by clicking on the Delete button is failed
+2020-03-16 11:03:603 INFO  ServiceHooks:37 - Verify Employee should not be deleted when alert is cancelled is passed
