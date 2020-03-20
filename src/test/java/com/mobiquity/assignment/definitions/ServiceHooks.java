@@ -1,7 +1,8 @@
-package com.mobiquity.assignment.testbase;
+package com.mobiquity.assignment.definitions;
 
 import com.mobiquity.assignment.enums.Browsers;
 import com.mobiquity.assignment.helper.LoggerUtil;
+import com.mobiquity.assignment.testbase.TestBase;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -9,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
+
 
 public class ServiceHooks {
     TestBase testBase;

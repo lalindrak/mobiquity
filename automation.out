@@ -1,6 +1,14 @@
-2020-03-16 12:03:235 INFO  ServiceHooks:37 - Verify the user is successfully logged into the system on Login button click is passed
-2020-03-16 12:03:668 INFO  ServiceHooks:37 - Verify the user is successfully logged into the system on Enter key press is passed
-2020-03-16 12:03:141 INFO  ServiceHooks:37 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
-2020-03-16 12:03:967 INFO  ServiceHooks:37 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
-2020-03-16 12:03:249 ERROR LoginPage:57 - Input fields are not empty after logging out from the system
-2020-03-16 12:03:253 ERROR ServiceHooks:26 - Verify the user is successfully logout from the system is failed
+2020-03-20 23:03:800 INFO  ServiceHooks:38 - Verify the user can add employee to the system is passed
+2020-03-20 23:03:741 INFO  ServiceHooks:38 - Verify the text field validations for creating a new employee is passed
+2020-03-20 23:03:217 ERROR LoginPage:56 - Added employee is not found in the employee list
+2020-03-20 23:03:218 INFO  ServiceHooks:38 - User cancels the adding employee operation by clicking on cancel button is passed
+2020-03-20 23:03:783 ERROR ServiceHooks:27 - Verify User should be able to delete an employee by clicking on the Delete button is failed
+2020-03-20 23:03:522 INFO  ServiceHooks:38 - Verify Employee should not be deleted when alert is cancelled is passed
+2020-03-20 23:03:299 INFO  ServiceHooks:38 - Verify the user is successfully logged into the system on Login button click is passed
+2020-03-20 23:03:419 INFO  ServiceHooks:38 - Verify the user is successfully logged into the system on Enter key press is passed
+2020-03-20 23:03:896 INFO  ServiceHooks:38 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
+2020-03-20 23:03:655 INFO  ServiceHooks:38 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
+2020-03-20 23:03:633 ERROR LoginPage:60 - Input fields are not empty after logging out from the system
+2020-03-20 23:03:638 ERROR ServiceHooks:27 - Verify the user is successfully logout from the system is failed
+2020-03-20 23:03:595 INFO  ServiceHooks:38 - Verify User should be able to edit the employee by clicking on Edit button is passed
+2020-03-20 23:03:458 INFO  ServiceHooks:38 - Verify User should be able to edit the employee double clicking on Employee Name is passed

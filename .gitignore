@@ -4,3 +4,5 @@
 /target
 /target_json
 .gitignore
+/automation.out
+/taget_junit
