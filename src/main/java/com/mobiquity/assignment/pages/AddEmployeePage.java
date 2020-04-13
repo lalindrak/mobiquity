@@ -6,7 +6,6 @@ import cucumber.api.DataTable;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;

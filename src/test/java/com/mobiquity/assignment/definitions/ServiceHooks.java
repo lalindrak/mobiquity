@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
+import java.net.MalformedURLException;
 
 
 public class ServiceHooks {
@@ -17,9 +18,9 @@ public class ServiceHooks {
     Logger log = LoggerUtil.getLogger(ServiceHooks.class);
 
     @Before
-    public void initializeTest() {
+    public void initializeTest() throws MalformedURLException {
         testBase = new TestBase();
-        testBase.selectBrowser(Browsers.CHROME.name());
+        testBase.selectBrowser(Browsers.CHROME.name(),true);
     }
 
     @After

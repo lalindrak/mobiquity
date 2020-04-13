@@ -8,9 +8,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class AddEmployee {
     AddEmployeePage addEmployeePage = new AddEmployeePage();
     private Data data;

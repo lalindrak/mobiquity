@@ -2,7 +2,6 @@ package com.mobiquity.assignment.definitions;
 
 import com.mobiquity.assignment.data.Data;
 import com.mobiquity.assignment.pages.EmployeeDetailsPage;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

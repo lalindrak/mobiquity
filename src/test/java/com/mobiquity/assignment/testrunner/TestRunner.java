@@ -13,33 +13,62 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = {
-                "pretty",
-                "html:target/cucumber",
-                "json:target_json/cucumber.json",
-                "junit:taget_junit/cucumber.xml"
-        },
-        features =
-                {
-                        "src/test/java/com/mobiquity/assignment/features"
+//@RunWith(Cucumber.class)
+//@CucumberOptions(
+//        plugin = {
+//                "pretty",
+//                "html:target/cucumber",
+//                "json:target_json/cucumber.json",
+//                "junit:taget_junit/cucumber.xml"
+//        },
+//        features =
+//                {
+//                        "src/test/java/com/mobiquity/assignment/features"
+//
+//                },
+//        glue =
+//                {
+//                        "com.mobiquity.assignment.definitions"
+//                },
+//        monochrome=true,
+//        tags =
+//
+//                {     //"@bvt"
+//
+//                }
+//
+//
+//)
+//
+//public class TestRunner extends TestBase{
+//
+//}
 
-                },
-        glue =
-                {
-                        "com.mobiquity.assignment.definitions"
-                },
-        monochrome=true,
-        tags =
+@CucumberOptions(features =  "src/test/java/com/mobiquity/assignment/features", glue = { "com.mobiquity.assignment.definitions" }, plugin = { "pretty", "html:target/cucumber-reports/cucumber-pretty",
+        "json:target/cucumber-reports/CucumberTestReport.json", "rerun:target/cucumber-reports/rerun.txt" },
+        monochrome = true, dryRun = false)
+public class TestRunner extends AbstractTestNGCucumberTests {
 
-                {     //"@bvt"
+        private TestNGCucumberRunner testNGCucumberRunner;
 
-                }
+        @BeforeClass(alwaysRun = true)
+        public void setUpClass() {
+                testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+        }
 
+        @Test(groups = "cucumber", description = "Runs cucmber Features", dataProvider = "features")
+        public void feature(CucumberFeatureWrapper cucumberFeature) {
+                testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+        }
 
-)
+        @DataProvider
+        public Object[][] features() {
+                return testNGCucumberRunner.provideFeatures();
+        }
 
-public class TestRunner extends TestBase{
+        @AfterClass(alwaysRun = true)
+        public void testDownClass() {
+                testNGCucumberRunner.finish();
+        }
 
 }
