@@ -18,7 +18,7 @@ public class TestBase {
     public static WebDriver driver;
     protected static BasePage basePage;
     private static final String BASE_URL = "http://cafetownsend-angular-rails.herokuapp.com/login";
-    private static final String SELENIUM_GRID_URL = "http://localhost:4545/wd/hub";
+    private static final String SELENIUM_GRID_URL = "http://localhost:4444/wd/hub";
 
     public void selectBrowser(String browser, boolean runRemote) throws MalformedURLException {
 

@@ -1,4 +1,14 @@
-2020-04-13 20:04:817 INFO  ServiceHooks:41 - Verify the user can add employee to the system is passed
-2020-04-13 20:04:586 INFO  ServiceHooks:41 - Verify the text field validations for creating a new employee is passed
-2020-04-13 20:04:117 ERROR LoginPage:56 - Added employee is not found in the employee list
-2020-04-13 20:04:119 INFO  ServiceHooks:41 - User cancels the adding employee operation by clicking on cancel button is passed
+2020-04-14 10:04:489 INFO  ServiceHooks:40 - Verify the user can add employee to the system is passed
+2020-04-14 10:04:988 INFO  ServiceHooks:40 - Verify the text field validations for creating a new employee is passed
+2020-04-14 10:04:242 ERROR LoginPage:56 - Added employee is not found in the employee list
+2020-04-14 10:04:244 INFO  ServiceHooks:40 - User cancels the adding employee operation by clicking on cancel button is passed
+2020-04-14 10:04:929 ERROR ServiceHooks:29 - Verify User should be able to delete an employee by clicking on the Delete button is failed
+2020-04-14 10:04:834 INFO  ServiceHooks:40 - Verify Employee should not be deleted when alert is cancelled is passed
+2020-04-14 10:04:40 INFO  ServiceHooks:40 - Verify the user is successfully logged into the system on Login button click is passed
+2020-04-14 10:04:943 INFO  ServiceHooks:40 - Verify the user is successfully logged into the system on Enter key press is passed
+2020-04-14 10:04:92 INFO  ServiceHooks:40 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
+2020-04-14 10:04:495 INFO  ServiceHooks:40 - Verify the error message is displayed and user remains in the login page for invalid inputs is passed
+2020-04-14 10:04:575 ERROR LoginPage:57 - Input fields are not empty after logging out from the system
+2020-04-14 10:04:578 ERROR ServiceHooks:29 - Verify the user is successfully logout from the system is failed
+2020-04-14 10:04:417 INFO  ServiceHooks:40 - Verify User should be able to edit the employee by clicking on Edit button is passed
+2020-04-14 10:04:318 INFO  ServiceHooks:40 - Verify User should be able to edit the employee double clicking on Employee Name is passed
